@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
+import SearchForm from './SearchForm';
 import Header from './Header';
-import 'materialize-css/dist/css/materialize.min.css';
-
 class App extends Component {
   render() {
     return (
-      <div>
+      <div className="container">
         <Header />
+        <SearchForm />
       </div>
     );
   }

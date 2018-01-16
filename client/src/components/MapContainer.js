@@ -25,8 +25,8 @@ class MapContainer extends Component {
 		return (
 			<div>
 				<MapWithMarker
-					containerElement={<div style={{ height: `400px` }} />}
-					mapElement={<div style={{ height: `100%` }} />}
+					containerElement={<div style={{ height: '400px' }} />}
+					mapElement={<div style={{ height: '100%' }} />}
 					markers={this.state.markers}
 				/>
 			</div>

@@ -4,7 +4,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 
 import SearchForm from './SearchForm';
 import Header from './Header';
-import SearchMap from './SearchMap';
+import MapContainer from './MapContainer';
 
 class App extends Component {
 	render() {
@@ -14,7 +14,7 @@ class App extends Component {
 					<div>
 						<Header />
 						<Route exact path="/" component={SearchForm} />
-						<Route exact path="/search" component={SearchMap} />
+						<Route exact path="/search" component={MapContainer} />
 					</div>
 				</BrowserRouter>
 			</div>

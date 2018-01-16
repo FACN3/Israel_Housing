@@ -18,6 +18,6 @@
   "homepage": "https://github.com/FACN3/Israel_Housing#readme",
   "dependencies": {
     "express": "^4.16.2",
-    "mongoose": "^4.13.9"
+    "mongoose": "^4.13.7"
   }
 }

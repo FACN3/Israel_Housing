@@ -1,0 +1,23 @@
+{
+  "name": "israel_housing",
+  "version": "1.0.0",
+  "description": "### This is an application that assists people in Israel get housing as fast as possible",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FACN3/Israel_Housing.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FACN3/Israel_Housing/issues"
+  },
+  "homepage": "https://github.com/FACN3/Israel_Housing#readme",
+  "dependencies": {
+    "express": "^4.16.2",
+    "mongoose": "^4.13.9"
+  }
+}

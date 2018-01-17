@@ -4,18 +4,11 @@ const fetchSelected = require('../controllers/fetchSelected');
 
 module.exports = app => {
   //Add property to data base
-  app.post('/api/create', (req, res) => {
-    createProperty(req, res);
-  });
+  app.post('/api/create', createProperty);
 
   //Fetch all property data from the database
-  app.get('/api/fetch', (req, res) => {
-    fetchAll(req, res);
-  });
+  app.get('/api/fetch', fetchAll);
 
-  // Fetch single selected property by id
-
-  app.get('/api/selected/:id', (req, res) => {
-    fetchSelected(id, req, res);
-  });
+  // Fetch single selected property by ids
+  app.get('/api/selected/:id', fetchSelected);
 };

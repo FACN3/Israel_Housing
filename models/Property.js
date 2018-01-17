@@ -6,7 +6,8 @@ const propertySchema = new Schema({
   price: Number,
   location: String,
   p_type: String,
-  size: Number
+  imageUrl: String,
+  size: Number,
 });
 
 mongoose.model('property', propertySchema);

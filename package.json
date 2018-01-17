@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/FACN3/Israel_Housing#readme",
   "dependencies": {
+    "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.13.7"
   }

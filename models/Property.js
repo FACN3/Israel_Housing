@@ -10,4 +10,4 @@ const propertySchema = new Schema({
   size: Number,
 });
 
-mongoose.model('property', propertySchema);
+module.exports = mongoose.model('property', propertySchema);

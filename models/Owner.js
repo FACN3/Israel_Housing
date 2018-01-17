@@ -7,4 +7,4 @@ const ownerSchema = new Schema({
   phone: String,
 });
 
-mongoose.model('owner', ownerSchema);
+module.exports = mongoose.model('owner', ownerSchema);

@@ -1,10 +1,10 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-const keys = require('./config/keys');
+require('env2')('./config.env');
 const Property = require('./models/Property');
 
-mongoose.connect(keys.mongoUrl);
+mongoose.connect(process.env.MONGO_URL);
 
 const app = express();
 

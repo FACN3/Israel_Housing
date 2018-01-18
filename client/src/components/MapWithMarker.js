@@ -9,10 +9,16 @@ const MapWithMarker = withGoogleMap(props => (
     {props.markers &&
       props.markers.map((marker, index) => {
         return (
-          <Marker key={index} position={{ lat: marker.lat, lng: marker.lng }}>
-            <InfoWindow position={{ lat: marker.lat, lng: marker.lng }}>
-              <PropertyInfo />
-            </InfoWindow>
+          <Marker
+            key={index}
+            position={{ lat: marker.lat, lng: marker.lng }}
+            onClick={() => props.onMarkerClick(marker)}
+          >
+            {marker.showInfo && (
+              <InfoWindow position={{ lat: marker.lat, lng: marker.lng }}>
+                <PropertyInfo />
+              </InfoWindow>
+            )}
           </Marker>
         );
       })}

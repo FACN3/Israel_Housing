@@ -3,7 +3,6 @@
 # dependencies
 /node_modules
 node_modules
-dev.js
 # testing
 /coverage
 config.env
@@ -19,5 +18,4 @@ config.env
 .env.production.local
 
 npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+

@@ -16,6 +16,6 @@ module.exports = (req, res) => {
       res.send(house);
     })
     .catch(err => {
-      res.status(400).send('unable to save in the database');
+      res.status(500).send('unable to save in the database');
     });
 };

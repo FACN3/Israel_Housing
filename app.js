@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 require('env2')('./config.env');
-const Property = require('./models/Property');
 const propertyRoutes = require('./routes/propertyRoutes');
 
 mongoose.connect(process.env.MONGO_URL);

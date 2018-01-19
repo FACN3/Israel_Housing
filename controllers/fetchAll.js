@@ -6,6 +6,6 @@ module.exports = (req, res) => {
       res.send(properties);
     })
     .catch(err => {
-      res.status(400).send('unable to read from the database');
+      res.status(500).send('unable to read from the database');
     });
 };

@@ -53,7 +53,7 @@ class Header extends Component {
     return (
       <div>
         <nav>
-          <div className="nav-wrapper red lighten-2">
+          <div className="nav-wrapper red teal">
             <Link to={'/'} className="brand-logo left">
               HH BnB
             </Link>

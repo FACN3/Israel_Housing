@@ -40,7 +40,6 @@ class MapContainer extends Component {
       }
       return marker;
     });
-    console.log(newMarkers);
     this.setState({ markers: newMarkers });
   }
 
@@ -52,7 +51,6 @@ class MapContainer extends Component {
       }
       return marker;
     });
-    console.log(newMarkers);
     this.setState({ markers: newMarkers });
   }
 

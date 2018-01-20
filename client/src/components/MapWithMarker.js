@@ -2,20 +2,22 @@ import React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import { InfoWindow } from 'react-google-maps';
 import PropertyInfo from './PropertyInfo';
-const defaultCenter = { lat: 31.771959, lng: 35.217018 }; //Coordinates for Jerusalem, the centre of Israel.
 
 const MapWithMarker = withGoogleMap(props => (
-  <GoogleMap defaultZoom={8} defaultCenter={defaultCenter}>
+  <GoogleMap defaultZoom={props.defaultZoom} defaultCenter={props.defaultCenter}>
     {props.markers &&
-      props.markers.map((marker, index) => {
+      props.markers.map(marker => {
         return (
           <Marker
-            key={index}
+            key={marker.id}
             position={{ lat: marker.lat, lng: marker.lng }}
-            onClick={() => props.onMarkerClick(marker)}
+            onClick={() => props.onMarkerClick(marker.id)}
           >
             {marker.showInfo && (
-              <InfoWindow position={{ lat: marker.lat, lng: marker.lng }}>
+              <InfoWindow
+                position={{ lat: marker.lat, lng: marker.lng }}
+                onCloseClick={() => props.onInfoClose(marker.id)}
+              >
                 <PropertyInfo />
               </InfoWindow>
             )}

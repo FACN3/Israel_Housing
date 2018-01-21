@@ -7,8 +7,8 @@ class MapContainer extends Component {
 
     this.state = {
       markers: [],
-      defaultCenter: { lat: 31.771959, lng: 35.217018 },
-      defaultZoom: 8,
+      defaultCenter: this.props.defaultCenter,
+      defaultZoom: this.props.defaultZoom,
     };
 
     this.handleMarkerClick = this.handleMarkerClick.bind(this);

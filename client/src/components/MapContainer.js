@@ -66,7 +66,7 @@ class MapContainer extends Component {
           defaultZoom={this.props.defaultZoom}
         />
         <Link to="/" className="waves-effect waves-light btn left">
-          <i className="material-icons right">arrow_back</i>
+          <i className="material-icons left">arrow_back</i>
           Back
         </Link>
       </div>

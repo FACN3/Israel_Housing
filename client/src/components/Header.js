@@ -5,7 +5,7 @@ const Header = () => {
     <div>
       <nav>
         <div className="nav-wrapper">
-          <a href="#" className="brand-logo center">
+          <a href="/" className="brand-logo center">
             HH BnB
           </a>
           <ul id="nav-mobile" className="right hide-on-med-and-down" />

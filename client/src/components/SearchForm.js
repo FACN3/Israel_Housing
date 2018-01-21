@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
-const data = require('../citydata');
+import { data } from '../citydata';
 
 class SearchForm extends Component {
   constructor(props) {
@@ -30,12 +30,12 @@ class SearchForm extends Component {
       <div>
         <form onSubmit={this.handleSubmit}>
           <Select
-            name="form-field-name"
+            name="city"
             value={this.state.selectedOption}
             onChange={this.handleChange}
-            options={data.data}
+            options={data}
           />
-          <button className="btn" type="submit">
+          <button className="btn right" type="submit">
             Submit
             <i className="material-icons right">send</i>
           </button>

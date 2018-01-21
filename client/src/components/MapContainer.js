@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MapWithMarker from './MapWithMarker';
 
 class MapContainer extends Component {
@@ -7,8 +8,6 @@ class MapContainer extends Component {
 
     this.state = {
       markers: [],
-      defaultCenter: { lat: 31.771959, lng: 35.217018 },
-      defaultZoom: 8,
     };
 
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
@@ -56,16 +55,20 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <MapWithMarker
           containerElement={<div style={{ height: '400px' }} />}
           mapElement={<div style={{ height: '100%' }} />}
           markers={this.state.markers}
           onMarkerClick={this.handleMarkerClick}
           onInfoClose={this.handleInfoClose}
-          defaultCenter={this.state.defaultCenter}
-          defaultZoom={this.state.defaultZoom}
+          defaultCenter={this.props.defaultCenter}
+          defaultZoom={this.props.defaultZoom}
         />
+        <Link to="/" className="waves-effect waves-light btn left">
+          <i className="material-icons left">arrow_back</i>
+          Back
+        </Link>
       </div>
     );
   }

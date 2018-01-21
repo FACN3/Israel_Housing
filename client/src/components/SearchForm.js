@@ -20,7 +20,9 @@ class SearchForm extends Component {
   }
   handleSubmit(event) {
     event.preventDefault();
-    this.props.handleFormSubmit(this.state.selectedOption.value);
+    this.props.handleFormSubmit(this.state.selectedOption.value, () => {
+      this.props.history.push('/search');
+    });
   }
 
   render() {
@@ -33,7 +35,10 @@ class SearchForm extends Component {
             onChange={this.handleChange}
             options={data.data}
           />
-          <input type="submit" value="Submit" className="right" />
+          <button className="btn" type="submit">
+            Submit
+            <i className="material-icons right">send</i>
+          </button>
         </form>
       </div>
     );

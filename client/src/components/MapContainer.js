@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import MapWithMarker from './MapWithMarker';
 
 class MapContainer extends Component {
@@ -64,6 +65,10 @@ class MapContainer extends Component {
           defaultCenter={this.props.defaultCenter}
           defaultZoom={this.props.defaultZoom}
         />
+        <Link to="/" className="waves-effect waves-light btn left">
+          <i className="material-icons right">arrow_back</i>
+          Back
+        </Link>
       </div>
     );
   }

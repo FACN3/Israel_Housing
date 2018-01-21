@@ -18,9 +18,9 @@ class App extends Component {
     this.handleSearch = this.handleSearch.bind(this);
   }
 
-  handleSearch(coord) {
+  handleSearch(coord, callback) {
     this.setState({ defaultCenter: coord, defaultZoom: 12 }, () => {
-      console.log(this.state.defaultCenter);
+      callback();
     });
   }
 

@@ -7,8 +7,6 @@ class MapContainer extends Component {
 
     this.state = {
       markers: [],
-      defaultCenter: this.props.defaultCenter,
-      defaultZoom: this.props.defaultZoom,
     };
 
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
@@ -63,8 +61,8 @@ class MapContainer extends Component {
           markers={this.state.markers}
           onMarkerClick={this.handleMarkerClick}
           onInfoClose={this.handleInfoClose}
-          defaultCenter={this.state.defaultCenter}
-          defaultZoom={this.state.defaultZoom}
+          defaultCenter={this.props.defaultCenter}
+          defaultZoom={this.props.defaultZoom}
         />
       </div>
     );

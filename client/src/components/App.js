@@ -19,8 +19,9 @@ class App extends Component {
   }
 
   handleSearch(coord) {
-    this.setState({ defaultCenter: coord, defaultZoom: 12 });
-    console.log(coord);
+    this.setState({ defaultCenter: coord, defaultZoom: 12 }, () => {
+      console.log(this.state.defaultCenter);
+    });
   }
 
   render() {
@@ -32,14 +33,18 @@ class App extends Component {
             <Route
               exact
               path="/"
-              render={props => <SearchForm handleFormSubmit={this.handleSearch} />}
+              render={props => <SearchForm handleFormSubmit={this.handleSearch} {...props} />}
             />
             <Route
               exact
               path="/search"
-              component={MapContainer}
-              defaultCenter={this.state.defaultCenter}
-              defaultZoom={this.state.defaultZoom}
+              render={props => (
+                <MapContainer
+                  defaultCenter={this.state.defaultCenter}
+                  defaultZoom={this.state.defaultZoom}
+                  {...props}
+                />
+              )}
             />
           </div>
         </BrowserRouter>

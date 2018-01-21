@@ -55,7 +55,7 @@ class MapContainer extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <MapWithMarker
           containerElement={<div style={{ height: '400px' }} />}
           mapElement={<div style={{ height: '100%' }} />}

@@ -27,7 +27,7 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <form onSubmit={this.handleSubmit}>
           <Select
             name="city"

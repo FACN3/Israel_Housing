@@ -1,11 +1,13 @@
 const Property = require('../models/Property');
 
 module.exports = (req, res) => {
-  const { name, price, location, p_type, imageUrl, size } = req.body;
+  const { name, price, location, lat, lng, p_type, imageUrl, size } = req.body;
   const property = new Property({
     name,
     price,
     location,
+    lat,
+    lng,
     p_type,
     imageUrl,
     size,

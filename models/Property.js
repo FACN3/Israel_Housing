@@ -5,6 +5,8 @@ const propertySchema = new Schema({
   name: String,
   price: Number,
   location: String,
+  lat: Number,
+  lng: Number,
   p_type: String,
   imageUrl: String,
   size: Number,

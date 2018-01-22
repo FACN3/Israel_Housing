@@ -26,7 +26,11 @@ class MapContainer extends Component {
         this.setState({ markers });
       })
       .catch(err => {
-        console.log(err);
+        return (
+          <div>
+            <h1>There was an error</h1>
+          </div>
+        );
       });
   }
 

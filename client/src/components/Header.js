@@ -6,7 +6,7 @@ class Header extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      auth: '',
+      currentUser: '',
     };
   }
 
@@ -14,16 +14,19 @@ class Header extends Component {
     axios
       .get('auth/current_user')
       .then(user => {
-        this.setState({ auth: user.data });
-        console.log(user);
+        this.setState({ currentUser: user.data });
       })
       .catch(err => {
-        console.log(err);
+        return (
+          <div>
+            <h1>There was a problem Login in</h1>
+          </div>
+        );
       });
   }
 
   renderContent() {
-    switch (this.state.auth) {
+    switch (this.state.currentUser) {
       case null:
         return;
       case '':

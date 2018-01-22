@@ -1,7 +1,7 @@
 import React from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 import { InfoWindow } from 'react-google-maps';
-import PropertyInfo from './PropertyInfo';
+import { Link } from 'react-router-dom';
 
 const MapWithMarker = withGoogleMap(props => (
   <GoogleMap defaultZoom={props.defaultZoom} defaultCenter={props.defaultCenter}>
@@ -18,7 +18,15 @@ const MapWithMarker = withGoogleMap(props => (
                 position={{ lat: marker.lat, lng: marker.lng }}
                 onCloseClick={() => props.onInfoClose(marker.id)}
               >
-                <PropertyInfo />
+                <div>
+                  <Link to="/details" onClick={() => props.onPopClick(marker._id)}>
+                    {marker.name}
+                    <br />
+                    {marker.price}
+                    <br />
+                    {marker.location}
+                  </Link>
+                </div>
               </InfoWindow>
             )}
           </Marker>

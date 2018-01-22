@@ -28,7 +28,6 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="container">
-
         <form onSubmit={this.handleSubmit}>
           <Select
             name="city"

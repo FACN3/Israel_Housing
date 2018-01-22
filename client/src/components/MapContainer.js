@@ -68,6 +68,7 @@ class MapContainer extends Component {
           onInfoClose={this.handleInfoClose}
           defaultCenter={this.props.defaultCenter}
           defaultZoom={this.props.defaultZoom}
+          onPopClick={this.props.handlePopupClick}
         />
         <Link to="/" className="waves-effect waves-light btn left">
           <i className="material-icons left">arrow_back</i>

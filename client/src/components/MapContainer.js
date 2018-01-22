@@ -10,13 +10,18 @@ class MapContainer extends Component {
       markers: [],
     };
 
+
+
     this.handleMarkerClick = this.handleMarkerClick.bind(this);
     this.handleInfoClose = this.handleInfoClose.bind(this);
+
   }
 
   componentDidMount() {
     this.setState({
+      windowPosition: null,
       markers: [
+
         { id: 0, lat: 31.705791, lng: 35.200657, showInfo: false },
         { id: 1, lat: 31.801447, lng: 34.643497, showInfo: false },
         { id: 2, lat: 32.699635, lng: 35.303547, showInfo: false },
@@ -51,6 +56,7 @@ class MapContainer extends Component {
       return marker;
     });
     this.setState({ markers: newMarkers });
+
   }
 
   render() {
@@ -60,10 +66,13 @@ class MapContainer extends Component {
           containerElement={<div style={{ height: '400px' }} />}
           mapElement={<div style={{ height: '100%' }} />}
           markers={this.state.markers}
+
+
           onMarkerClick={this.handleMarkerClick}
           onInfoClose={this.handleInfoClose}
           defaultCenter={this.props.defaultCenter}
           defaultZoom={this.props.defaultZoom}
+
         />
         <Link to="/" className="waves-effect waves-light btn left">
           <i className="material-icons left">arrow_back</i>

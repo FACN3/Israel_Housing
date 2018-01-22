@@ -8,7 +8,6 @@ const MapWithMarker = withGoogleMap(props => (
     {props.markers &&
       props.markers.map(marker => {
         return (
-
           <Marker
             key={marker.id}
             position={{ lat: marker.lat, lng: marker.lng }}
@@ -21,7 +20,7 @@ const MapWithMarker = withGoogleMap(props => (
               >
                 <PropertyInfo />
               </InfoWindow>
-            }
+            )}
           </Marker>
         );
       })}

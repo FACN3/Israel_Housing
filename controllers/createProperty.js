@@ -11,6 +11,7 @@ module.exports = (req, res) => {
     p_type,
     imageUrl,
     size,
+    ownerEmail: req.user.email,
   });
   property
     .save()

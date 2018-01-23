@@ -11,6 +11,7 @@ const PropertyDetails = props => {
             height="200"
             width="300"
             src={props.details.imageUrl}
+            alt=""
           />
         </li>
         <li className="collection-item">
@@ -29,13 +30,10 @@ const PropertyDetails = props => {
         <i className="material-icons left">arrow_back</i>
         Back
       </Link>
-
-      <form action="mailto:hoslackochieng@gmail.com" method="post" enctype="text/plain">
-        <button type="submit" className="waves-effect waves-light btn right">
-          <i className="material-icons right">email</i>
-          Contact
-        </button>
-      </form>
+      <Link to="/contact" type="submit" className="waves-effect waves-light btn right">
+        <i className="material-icons right">email</i>
+        Contact
+      </Link>
     </div>
   );
 };

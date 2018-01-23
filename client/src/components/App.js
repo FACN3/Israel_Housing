@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
+import 'materialize-css';
 import { BrowserRouter, Route } from 'react-router-dom';
 import axios from 'axios';
 
@@ -7,6 +8,7 @@ import SearchForm from './SearchForm';
 import Header from './Header';
 import MapContainer from './MapContainer';
 import PropertyDetails from './PropertyDetails';
+import ContactForm from './ContactForm';
 
 class App extends Component {
   constructor(props) {
@@ -67,6 +69,11 @@ class App extends Component {
               exact
               path="/details"
               render={props => <PropertyDetails details={this.state.details} {...props} />}
+            />
+            <Route
+              exact
+              path="/contact"
+              render={props => <ContactForm details={this.state.details} {...props} />}
             />
           </div>
         </BrowserRouter>

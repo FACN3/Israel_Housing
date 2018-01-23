@@ -10,6 +10,7 @@ const propertySchema = new Schema({
   p_type: String,
   imageUrl: String,
   size: Number,
+  ownerEmail: String,
 });
 
 module.exports = mongoose.model('property', propertySchema);

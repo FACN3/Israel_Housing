@@ -1,10 +1,15 @@
 import React, { Component } from 'react';
+import 'materialize-css/dist/js/materialize.min.js';
 import 'materialize-css/dist/css/materialize.min.css';
 import { BrowserRouter, Route } from 'react-router-dom';
+import axios from 'axios';
 
 import SearchForm from './SearchForm';
 import Header from './Header';
 import MapContainer from './MapContainer';
+import PropertyDetails from './PropertyDetails';
+import ContactForm from './ContactForm';
+import PropertyForm from './PropertyForm';
 
 class App extends Component {
   constructor(props) {
@@ -14,14 +19,27 @@ class App extends Component {
       selectedOption: '',
       defaultCenter: { lat: 31.771959, lng: 35.217018 },
       defaultZoom: 8,
+      details: {},
     };
     this.handleSearch = this.handleSearch.bind(this);
+    this.handleDetails = this.handleDetails.bind(this);
   }
 
   handleSearch(coord, callback) {
     this.setState({ defaultCenter: coord, defaultZoom: 12 }, () => {
       callback();
     });
+  }
+
+  handleDetails(id) {
+    axios
+      .get(`/api/selected/${id}`)
+      .then(property => {
+        this.setState({ details: property.data });
+      })
+      .catch(err => {
+        return <div>There was a problem getting the data</div>;
+      });
   }
 
   render() {
@@ -42,10 +60,22 @@ class App extends Component {
                 <MapContainer
                   defaultCenter={this.state.defaultCenter}
                   defaultZoom={this.state.defaultZoom}
+                  handlePopupClick={this.handleDetails}
                   {...props}
                 />
               )}
             />
+            <Route
+              exact
+              path="/details"
+              render={props => <PropertyDetails details={this.state.details} {...props} />}
+            />
+            <Route
+              exact
+              path="/contact"
+              render={props => <ContactForm details={this.state.details} {...props} />}
+            />
+            <Route exact path="/new" component={PropertyForm} />
           </div>
         </BrowserRouter>
       </div>

@@ -34,10 +34,10 @@ class PropertyForm extends Component {
     const paramStr = `timestamp=${timestamp}&upload_preset=${upload_preset}${api_secret}`;
     const signature = sha1(paramStr);
     const params = {
-      api_key: api_key,
-      timestamp: timestamp,
-      upload_preset: upload_preset,
-      signature: signature,
+      api_key,
+      timestamp,
+      upload_preset,
+      signature,
     };
 
     let uploadRequest = superagent.post(url);

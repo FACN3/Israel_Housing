@@ -8,8 +8,8 @@ module.exports = (req, res) => {
     secure: false,
     port: 25,
     auth: {
-      user: process.env.Email,
-      pass: process.env.MailPass,
+      user: process.env.EMAIL,
+      pass: process.env.MAIL_PASS,
     },
     tls: {
       rejectUnauthorized: false,
@@ -17,7 +17,7 @@ module.exports = (req, res) => {
   });
 
   const mailOptions = {
-    from: process.env.Email,
+    from: process.env.EMAIL,
     to: email,
     subject: name,
     text: message,

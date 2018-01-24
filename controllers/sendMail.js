@@ -8,7 +8,7 @@ module.exports = (req, res) => {
     secure: false,
     port: 25,
     auth: {
-      user: 'noreply.hbnb@gmail.com',
+      user: process.env.Email,
       pass: process.env.MailPass,
     },
     tls: {
@@ -17,7 +17,7 @@ module.exports = (req, res) => {
   });
 
   const mailOptions = {
-    from: 'noreply.hbnb@gmail.com',
+    from: process.env.Email,
     to: email,
     subject: name,
     text: message,
@@ -25,7 +25,7 @@ module.exports = (req, res) => {
 
   transporter.sendMail(mailOptions, (err, response) => {
     if (err) {
-      console.log('Error in sending email', err);
+      res.status(500).send('Error in sending email', err);
     } else {
       res.send(response);
     }

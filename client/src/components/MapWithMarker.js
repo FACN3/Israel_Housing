@@ -19,7 +19,7 @@ const MapWithMarker = withGoogleMap(props => (
                 onCloseClick={() => props.onInfoClose(marker.id)}
               >
                 <div>
-                  <Link to="/details" onClick={() => props.onPopClick(marker._id)}>
+                  <Link to="/details" onClick={() => props.onPopupClick(marker._id)}>
                     {marker.name}
                     <br />
                     {marker.price}

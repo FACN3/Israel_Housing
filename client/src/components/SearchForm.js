@@ -28,6 +28,13 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="container">
+        <div>
+          <h1 className="flow-text white-text bold center card-panel teal lighten-2">
+            Find A House Fast!!!!
+          </h1>
+
+          <h2 className="flow-text">Select Your Preferrded location below and get a house fast</h2>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <Select
             name="city"

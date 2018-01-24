@@ -15,6 +15,7 @@ class Header extends Component {
       .get('auth/current_user')
       .then(user => {
         this.setState({ currentUser: user.data });
+        this.props.updateUser(user.data);
       })
       .catch(err => {
         return (

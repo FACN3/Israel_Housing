@@ -65,6 +65,10 @@ class PropertyForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    if (!this.props.currentUser) {
+      alert('Please Login first');
+      return;
+    }
     const { imageUrl } = this.state;
     const { lat, lng } = this.state.selectedOption.value;
     const name = event.target.name.value;
@@ -104,28 +108,29 @@ class PropertyForm extends Component {
           <div className="row">
             <div className="input-field col s12">
               <i className="material-icons prefix">description</i>
-              <input id="name" name="name" type="text" className="validate" />
+              <input required id="name" name="name" type="text" className="validate" />
               <label htmlFor="name">Description</label>
             </div>
 
             <div className="input-field col s12">
               <i className="material-icons prefix">home</i>
-              <input id="type" name="type" type="text" className="validate" />
+              <input required id="type" name="type" type="text" className="validate" />
               <label htmlFor="type">Type: e.g studio</label>
             </div>
             <div className="input-field col s12">
               <i className="material-icons prefix">create</i>
-              <input id="size" name="size" type="number" className="validate" />
+              <input required id="size" name="size" type="number" className="validate" />
               <label htmlFor="size">Size(number of bedrooms)</label>
             </div>
             <div className="input-field col s12">
               <i className="material-icons prefix">attach_money</i>
-              <input id="price" name="price" type="number" className="validate" />
+              <input required id="price" name="price" type="number" className="validate" />
               <label htmlFor="price">Price(ILS)</label>
             </div>
             <div className="input-field col s12">
               <i className="material-icons prefix">add_location</i>
               <Select
+                required
                 placeholder="Select Location"
                 id="location"
                 name="location"

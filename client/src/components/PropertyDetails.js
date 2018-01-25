@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import('env2')('./config.env');
-const key = process.env.CURRENCY_API_KEY;
+import keys from '../config/keys';
+const key = keys.CURRENCY_API_KEY;
 
 class PropertyDetails extends Component {
   constructor(props) {

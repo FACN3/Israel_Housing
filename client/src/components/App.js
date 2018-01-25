@@ -20,9 +20,15 @@ class App extends Component {
       defaultCenter: { lat: 31.771959, lng: 35.217018 },
       defaultZoom: 8,
       details: {},
+      currentUser: '',
     };
     this.handleSearch = this.handleSearch.bind(this);
     this.handleDetails = this.handleDetails.bind(this);
+    this.updateUser = this.updateUser.bind(this);
+  }
+
+  updateUser(user) {
+    this.setState({ currentUser: user });
   }
 
   handleSearch(coord, callback) {
@@ -47,7 +53,7 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <div>
-            <Header />
+            <Header updateUser={this.updateUser} />
             <Route
               exact
               path="/"
@@ -75,7 +81,11 @@ class App extends Component {
               path="/contact"
               render={props => <ContactForm details={this.state.details} {...props} />}
             />
-            <Route exact path="/new" component={PropertyForm} />
+            <Route
+              exact
+              path="/new"
+              render={props => <PropertyForm currentUser={this.state.currentUser} {...props} />}
+            />
           </div>
         </BrowserRouter>
       </div>

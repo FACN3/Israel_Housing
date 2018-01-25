@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Select from 'react-select';
 import 'react-select/dist/react-select.css';
 import { data } from '../citydata';
@@ -28,8 +29,19 @@ class SearchForm extends Component {
   render() {
     return (
       <div className="container">
+        <div>
+          <div className="flow-text white-text bold center card-panel teal lighten-2">
+            <h3>Find A House Fast!!!! </h3>
+          </div>
+          <h1 className="flow-text white-text bold center card-panel grey lighten-2">
+            <Link to={'/new'}>Or Click here Provide One</Link>
+          </h1>
+
+          <h2 className="flow-text">Select Your Preferrded location below and get a house fast</h2>
+        </div>
         <form onSubmit={this.handleSubmit}>
           <Select
+            required
             name="city"
             value={this.state.selectedOption}
             onChange={this.handleChange}

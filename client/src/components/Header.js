@@ -15,6 +15,7 @@ class Header extends Component {
       .get('auth/current_user')
       .then(user => {
         this.setState({ currentUser: user.data });
+        this.props.updateUser(user.data);
       })
       .catch(err => {
         return (
@@ -53,7 +54,7 @@ class Header extends Component {
         <nav>
           <div className="nav-wrapper red teal">
             <Link to={'/'} className="brand-logo left">
-              HH BnB
+              H-BnB
             </Link>
             <ul id="nav-mobile" className="right">
               {this.renderContent()}

@@ -6,6 +6,7 @@ node_modules
 # testing
 /coverage
 config.env
+dev.js
 
 # production
 /build
